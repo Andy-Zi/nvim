@@ -13,7 +13,9 @@ return{
         "elixir",
         "heex",
         "javascript",
-        "html"
+        "typescript",
+        "html",
+        "rust",
       },
       sync_install = false,
       highlight = { enable = true },
