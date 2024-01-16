@@ -33,3 +33,7 @@ https://github.com/saadparwaiz1/cmp_luasnip
 https://github.com/hrsh7th/cmp-nvim-lsp
 
 https://github.com/rafamadriz/friendly-snippets
+
+https://github.com/mfussenegger/nvim-dap
+
+https://github.com/rcarriga/nvim-dap-ui
