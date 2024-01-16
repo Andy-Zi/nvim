@@ -17,3 +17,7 @@ https://github.com/williamboman/mason-lspconfig.nvim
 https://github.com/neovim/nvim-lspconfig
 
 https://github.com/nvim-telescope/telescope-ui-select.nvim
+
+https://github.com/nvimtools/none-ls.nvim
+
+https://github.com/github/copilot.vim
