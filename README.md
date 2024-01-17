@@ -3,8 +3,10 @@
 ## install latest nvim
 
 ```bash
-sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
+
+sudo apt-get install build-essential gdb
 ```
 
 ## plugins
