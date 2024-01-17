@@ -60,3 +60,5 @@ https://github.com/rafamadriz/friendly-snippets
 https://github.com/mfussenegger/nvim-dap
 
 https://github.com/rcarriga/nvim-dap-ui
+
+https://github.com/christoomey/vim-tmux-navigator
