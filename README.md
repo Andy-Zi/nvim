@@ -7,9 +7,21 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 
 sudo apt-get install build-essential gdb
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install --lts
+nvm use --lts
 ```
 
 ## plugins
+
+### plugin setup
+
+#### Copilot
+
+:Copilot setup
+
+### plugin List
 
 https://github.com/folke/lazy.nvim
 
