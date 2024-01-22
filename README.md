@@ -62,3 +62,13 @@ https://github.com/mfussenegger/nvim-dap
 https://github.com/rcarriga/nvim-dap-ui
 
 https://github.com/christoomey/vim-tmux-navigator
+
+https://github.com/folke/which-key.nvim
+
+https://github.com/ThePrimeagen/git-worktree.nvim
+
+https://github.com/stevearc/oil.nvim
+
+https://github.com/lewis6991/gitsigns.nvim
+
+https://github.com/numToStr/Comment.nvim
