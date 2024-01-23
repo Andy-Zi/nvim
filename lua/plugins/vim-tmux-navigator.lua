@@ -14,7 +14,7 @@ return {
           { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
           { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
      },
-     setup = function() 
+     config = function() 
           local wk = require("which-key")
           wk.register({
                ["<c-h>"] = { "<cmd><C-U>TmuxNavigateLeft<cr>", "TmuxNavigateLeft" },
