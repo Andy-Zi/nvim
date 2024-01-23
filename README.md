@@ -74,3 +74,5 @@ https://github.com/lewis6991/gitsigns.nvim
 https://github.com/numToStr/Comment.nvim
 
 https://github.com/mbbill/undotree
+
+
