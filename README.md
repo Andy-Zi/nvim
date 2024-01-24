@@ -75,4 +75,4 @@ https://github.com/numToStr/Comment.nvim
 
 https://github.com/mbbill/undotree
 
-
+https://github.com/folke/zen-mode.nvim
