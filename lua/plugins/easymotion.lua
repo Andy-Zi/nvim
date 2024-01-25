@@ -1,4 +1,4 @@
---[[ return {
+return {
 	"easymotion/vim-easymotion",
 	config = function()
 		-- Disable default mappings
@@ -14,5 +14,4 @@
 		vim.api.nvim_set_keymap("n", "<Leader>j", "<Plug>(easymotion-j)", { noremap = false })
 		vim.api.nvim_set_keymap("n", "<Leader>k", "<Plug>(easymotion-k)", { noremap = false })
 	end,
-} ]]
-return {}
+}
