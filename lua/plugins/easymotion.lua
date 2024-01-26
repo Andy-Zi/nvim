@@ -18,7 +18,7 @@ return {
             ["<Leader>j"] = { "<Plug>(easymotion-j)", "Find line below" },
             ["<Leader>k"] = { "<Plug>(easymotion-k)", "Find line above" },
           })
-          wk.reregister({
+          wk.register({
                ["s"] = { "<Plug>(easymotion-overwin-f2)", "Find 2 characters" },
           })
 	end,
