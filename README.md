@@ -21,60 +21,11 @@ nvm use --lts
 
 :Copilot setup
 
-### plugin List
+### Telescope
 
-https://github.com/folke/lazy.nvim
+requires [ripgrep](https://github.com/BurntSushi/ripgrep)
 
-https://github.com/catppuccin/nvim
-
-https://github.com/nvim-telescope/telescope.nvim
-
-https://github.com/nvim-neo-tree/neo-tree.nvim
-
-https://github.com/nvim-lualine/lualine.nvim
-
-https://github.com/williamboman/mason.nvim
-
-https://github.com/williamboman/mason-lspconfig.nvim
-
-https://github.com/neovim/nvim-lspconfig
-
-https://github.com/nvim-telescope/telescope-ui-select.nvim
-
-https://github.com/nvimtools/none-ls.nvim
-
-https://github.com/github/copilot.vim
-
-https://github.com/goolord/alpha-nvim
-
-https://github.com/hrsh7th/nvim-cmp
-
-https://github.com/L3MON4D3/LuaSnip
-
-https://github.com/saadparwaiz1/cmp_luasnip
-
-https://github.com/hrsh7th/cmp-nvim-lsp
-
-https://github.com/rafamadriz/friendly-snippets
-
-https://github.com/mfussenegger/nvim-dap
-
-https://github.com/rcarriga/nvim-dap-ui
-
-https://github.com/christoomey/vim-tmux-navigator
-
-https://github.com/folke/which-key.nvim
-
-https://github.com/ThePrimeagen/git-worktree.nvim
-
-https://github.com/stevearc/oil.nvim
-
-https://github.com/lewis6991/gitsigns.nvim
-
-https://github.com/numToStr/Comment.nvim
-
-https://github.com/mbbill/undotree
-
-https://github.com/folke/zen-mode.nvim
-
-https://github.com/folke/twilight.nvim
+```bash
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+sudo dpkg -i ripgrep_13.0.0_amd64.deb
+```
