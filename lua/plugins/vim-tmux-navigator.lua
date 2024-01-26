@@ -7,21 +7,21 @@ return {
           "TmuxNavigateRight",
           "TmuxNavigatePrevious",
      },
-     --[[ keys = {
-          { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-          { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-          { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-          { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-          { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-     }, ]]
-     config = function() 
+     keys = {
+          { "<c-h>",  "<cmd>TmuxNavigateLeft<cr>" },
+          { "<c-j>",  "<cmd>TmuxNavigateDown<cr>" },
+          { "<c-k>",  "<cmd>TmuxNavigateUp<cr>" },
+          { "<c-l>",  "<cmd>TmuxNavigateRight<cr>" },
+          { "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>" },
+     },
+     config = function()
           local wk = require("which-key")
           wk.register({
-               ["<c-h>"] = { "<cmd><C-U>TmuxNavigateLeft<cr>", "TmuxNavigateLeft" },
-               ["<c-j>"] = { "<cmd><C-U>TmuxNavigateDown<cr>", "TmuxNavigateDown" },
-               ["<c-k>"] = { "<cmd><C-U>TmuxNavigateUp<cr>", "TmuxNavigateUp" },
-               ["<c-l>"] = { "<cmd><C-U>TmuxNavigateRight<cr>", "TmuxNavigateRight" },
-               ["<c-\\>"] = { "<cmd><C-U>TmuxNavigatePrevious<cr>", "TmuxNavigatePrevious" },
+               ["<c-h>"] = { "<cmd>TmuxNavigateLeft<cr>", "TmuxNavigateLeft" },
+               ["<c-j>"] = { "<cmd>TmuxNavigateDown<cr>", "TmuxNavigateDown" },
+               ["<c-k>"] = { "<cmd>TmuxNavigateUp<cr>", "TmuxNavigateUp" },
+               ["<c-l>"] = { "<cmd>TmuxNavigateRight<cr>", "TmuxNavigateRight" },
+               ["<c-\\>"] = { "<cmd>TmuxNavigatePrevious<cr>", "TmuxNavigatePrevious" },
           }, {})
      end,
 }
