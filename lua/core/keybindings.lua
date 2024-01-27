@@ -47,4 +47,6 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader><leader>s', ':nohlsearch<CR>')
+
+vim.keymap.set('n', '<leader>gl', '<cmd>:term lazygit<CR>')
 vim.wo.number = true

@@ -9,7 +9,7 @@ return {
 
           local wk = require("which-key")
           wk.register({
-               ["<leader>-u"] = { vim.cmd.UndoTreeToggle, "Undo Tree" },
+               ["<leader>u"] = { vim.cmd.UndoTreeToggle, "Undo Tree" },
           })
      end,
 }
