@@ -2,7 +2,7 @@ return {
      "easymotion/vim-easymotion",
      config = function()
           -- Disable default mappings
-          vim.g.EasyMotion_do_mapping = 1
+          vim.g.EasyMotion_do_mapping = 0
 
           -- Custom mappings
           vim.api.nvim_set_keymap("n", "s", "<Plug>(easymotion-overwin-f2)", { noremap = false })
