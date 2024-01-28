@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -48,5 +47,6 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader><leader>s', ':nohlsearch<CR>')
 
-vim.keymap.set('n', '<leader>gl', '<cmd>:term lazygit<CR>')
-vim.wo.number = true
+vim.keymap.set('n', 'H', ':bprevious<CR>')
+vim.keymap.set('n', 'L', ':bnext<CR>')
+vim.api.nvim_set_keymap('n', '<Leader>b', ':enew | Oil<CR>', {noremap = true, silent = true})
