@@ -49,4 +49,10 @@ vim.keymap.set('n', '<leader><leader>s', ':nohlsearch<CR>')
 
 vim.keymap.set('n', 'H', ':bprevious<CR>')
 vim.keymap.set('n', 'L', ':bnext<CR>')
-vim.api.nvim_set_keymap('n', '<Leader>b', ':enew | Oil<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>b', ':enew<CR>', {noremap = true, silent = true})
+
+vim.keymap.set('n', ',', ':vertical resize -2<CR>')
+vim.keymap.set('n', '.', ':vertical resize +2<CR>')
+vim.keymap.set('n', '<', ':resize -2<CR>')
+vim.keymap.set('n', '>', ':resize +2<CR>')
+
