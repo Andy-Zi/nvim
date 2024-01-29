@@ -18,6 +18,7 @@ return {
                     show_all_buffers = true,
                 })
             end)
+            vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {noremap=false})
             local wk = require("which-key")
             wk.register({
                 ["<leader>pf"] = { builtin.find_files, "Find files" },
