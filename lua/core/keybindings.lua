@@ -10,7 +10,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
--- vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({"n", "v"}, "<leader><leader>y", [["+y]])
@@ -53,6 +53,6 @@ vim.api.nvim_set_keymap('n', '<Leader>b', ':enew<CR>', {noremap = true, silent =
 
 vim.keymap.set('n', ',', ':vertical resize -2<CR>')
 vim.keymap.set('n', '.', ':vertical resize +2<CR>')
-vim.keymap.set('n', '<', ':resize -2<CR>')
-vim.keymap.set('n', '>', ':resize +2<CR>')
+vim.keymap.set('n', '-', ':resize -2<CR>')
+vim.keymap.set('n', '=', ':resize +2<CR>')
 
