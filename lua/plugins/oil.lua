@@ -5,7 +5,7 @@ return {
      dependencies = { "nvim-tree/nvim-web-devicons" },
      config = function()
           -- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-          vim.keymap.set("n", "<leader>o", "<CMD>Oil --float<CR>", { desc = "Open current directory" })
+          vim.keymap.set("n", "<leader>o", "<CMD>Oil --float<CR>", { desc = "Open current directory", silent = true, noremap = true })
           require("oil").setup({
                -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
                -- Set to false if you still want to use netrw.

@@ -302,7 +302,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left toggle<CR>", {})
-		vim.keymap.set("n", "<leader>nf", ":Neotree buffers reveal float toggle<CR>", {})
+		vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left toggle<CR>", {desc = "NeoTree filesystem", noremap = true, silent = true})
+		vim.keymap.set("n", "<leader>nf", ":Neotree buffers reveal float toggle<CR>", {desc = "NeoTree buffers", noremap = true, silent = true})
 	end,
 }

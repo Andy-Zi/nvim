@@ -64,6 +64,6 @@ return {
 		on_close = function() end,
 	},
 	config = function()
-          vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>')
+          vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>', { noremap = true, silent = true })
 	end,
 }

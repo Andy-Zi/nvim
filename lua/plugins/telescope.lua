@@ -5,42 +5,28 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             local builtin = require("telescope.builtin")
-            vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
-            vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+            vim.keymap.set("n", "<leader>pf", builtin.find_files, {desc="Find files", noremap=false, silent=true})
+            vim.keymap.set("n", "<C-p>", builtin.git_files, {desc="Git files", noremap=false, silent=true})
             vim.keymap.set("n", "<leader>ps", function()
                 builtin.grep_string({ search = vim.fn.input("Grep > ") })
-            end)
-            vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
+            end,{desc="Grep string", noremap=false, silent=true})
+            vim.keymap.set("n", "<leader>vh", builtin.help_tags, {desc="Help tags", noremap=false, silent=true})
             vim.keymap.set("n", "<leader>pb", function()
                 builtin.buffers({
                     sort_lastused = true,
                     ignore_current_buffer = true,
                     show_all_buffers = true,
                 })
-            end)
-            vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {noremap=false})
-            local wk = require("which-key")
-            wk.register({
-                ["<leader>pf"] = { builtin.find_files, "Find files" },
-                ["<C-p>"] = { builtin.git_files, "Git files" },
-                ["<leader>ps"] = {
-                    function()
-                        builtin.grep_string({ search = vim.fn.input("Grep > ") })
-                    end,
-                    "Grep string",
-                },
-                ["<leader>vh"] = { builtin.help_tags, "Help tags" },
-                ["<leader>pb"] = {
-                    function()
-                        builtin.buffers({
-                            sort_lastused = true,
-                            ignore_current_buffer = true,
-                            show_all_buffers = true,
-                        })
-                    end,
-                    "Buffers",
-                },
-            })
+            end, {desc="Buffers", noremap=false, silent=true})
+            vim.keymap.set("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {desc="commands", noremap=false, silent=true})
+            -- local wk = require("which-key")
+            -- wk.register({
+            --     ["<leader>pf"] = "Find files",
+            --     ["<C-p>"] = "Git files",
+            --     ["<leader>ps"] = "Grep string",
+            --     ["<leader>vh"] = "Help tags",
+            --     ["<leader>pb"] = "Buffers",
+            -- })
         end,
     },
     {

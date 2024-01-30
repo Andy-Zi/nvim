@@ -20,10 +20,6 @@ return {
             }
         })
 
-        vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-        local wk = require("which-key")
-        wk.register({
-            ["<leader>gf"] = { vim.lsp.buf.format, "Format" },
-        })
+        vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format", noremap = true, silent = true })
     end,
 }
