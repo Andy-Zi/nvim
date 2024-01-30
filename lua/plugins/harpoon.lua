@@ -21,7 +21,7 @@ return {
 		end)
           local wk = require("which-key")
           wk.register({
-               ["C-e"] = {ui.toggle_quick_menu, "Harpoon menu"},
+               ["<C-e>"] = {ui.toggle_quick_menu, "Harpoon menu"},
                ["<leader>a"] = {mark.add_file, "Harpoon mark"},
                ["<leader>1"] = {function() ui.nav_file(1) end, "Harpoon 1"},
                ["<leader>2"] = {function() ui.nav_file(2) end, "Harpoon 2"},
