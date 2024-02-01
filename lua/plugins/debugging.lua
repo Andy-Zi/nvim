@@ -74,6 +74,6 @@ return {
 			{ text = "🎯", texthl = "DapBreakpointHit", linehl = "DapBreakpointHit", numhl = "DapBreakpointHit" }
 		)
 
-		require("dap-python").setup("~/.virtualenvs/debugpy3.9/bin/python")
+		require("dap-python").setup("~/.virtualenvs/debugpy3.11/bin/python")
 	end,
 }

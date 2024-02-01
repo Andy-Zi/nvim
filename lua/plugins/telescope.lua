@@ -19,14 +19,7 @@ return {
                 })
             end, {desc="Buffers", noremap=false, silent=true})
             vim.keymap.set("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {desc="commands", noremap=false, silent=true})
-            -- local wk = require("which-key")
-            -- wk.register({
-            --     ["<leader>pf"] = "Find files",
-            --     ["<C-p>"] = "Git files",
-            --     ["<leader>ps"] = "Grep string",
-            --     ["<leader>vh"] = "Help tags",
-            --     ["<leader>pb"] = "Buffers",
-            -- })
+            vim.keymap.set("n", "<leader>pt", "<Cmd>lua Treesitter<CR>", {desc="Telescope", noremap=false, silent=true})
         end,
     },
     {
