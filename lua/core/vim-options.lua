@@ -25,3 +25,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 51
 
 vim.wo.number = true
+
+vim.opt.conceallevel = 1
