@@ -19,13 +19,12 @@ vim.keymap.set("n", "<leader><leader>Y", [["+Y]], { noremap = true, silent = tru
 vim.keymap.set({ "n", "v" }, "<leader><leader>p", [["+p]], { noremap = true, silent = true })
 vim.keymap.set("n", "<leader><leader>P", [["+P]], { noremap = true, silent = true })
 
-vim.keymap.set({ "n", "v" }, "<leader><leader>d", [["_d]], { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { noremap = true, silent = true })
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "Q", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { noremap = true, silent = true })
 
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { noremap = true, silent = true})
@@ -35,18 +34,11 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { noremap = true, silent = 
 
 vim.keymap.set(
 	"n",
-	"<leader>s",
+	"<leader>r",
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ noremap = true, silent = true }
 )
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { noremap = true, silent = true})
-
-vim.keymap.set(
-	"n",
-	"<leader>vpp",
-	"<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>",
-	{ noremap = true, silent = true }
-)
 
 -- Navigate vim panes better
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { noremap = true, silent = true })
