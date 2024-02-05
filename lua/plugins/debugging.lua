@@ -7,16 +7,14 @@ return {
 		"theHamsta/nvim-dap-virtual-text",
 		"mfussenegger/nvim-dap",
 		"jay-babu/mason-nvim-dap.nvim",
+		--python
+		"mfussenegger/nvim-dap-python",
 	},
 	config = function()
 		require("nvim-dap-virtual-text").setup()
 		require("dapui").setup()
 		require("neodev").setup({
 			library = { plugins = { "nvim-dap-ui" }, types = true },
-		})
-		require("mason").setup()
-		require("mason-nvim-dap").setup({
-			handlers = {},
 		})
 		local dap, dapui = require("dap"), require("dapui")
 
@@ -116,5 +114,8 @@ return {
 			"DapBreakpointHit",
 			{ text = "🎯", texthl = "DapBreakpointHit", linehl = "DapBreakpointHit", numhl = "DapBreakpointHit" }
 		)
+
+		--python
+		require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 	end,
 }
