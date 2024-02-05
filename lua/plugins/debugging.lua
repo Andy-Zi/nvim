@@ -14,8 +14,10 @@ return {
 		require("neodev").setup({
 			library = { plugins = { "nvim-dap-ui" }, types = true },
 		})
-        require("mason").setup()
-        require("mason-nvim-dap").setup()
+		require("mason").setup()
+		require("mason-nvim-dap").setup({
+			handlers = {},
+		})
 		local dap, dapui = require("dap"), require("dapui")
 
 		dap.listeners.before.attach.dapui_config = function()
@@ -43,7 +45,7 @@ return {
 			":lua require('dapui').open({reset = true})<CR>",
 			{ desc = "Reset DAP UI", noremap = true, silent = true }
 		)
-		vim.keymap.set("n", "<leader>ds", ":DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>du", ":DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
 		vim.keymap.set(
 			"n",
 			"<leader>dx",
@@ -52,10 +54,30 @@ return {
 		)
 		vim.keymap.set(
 			"n",
-			"<leader>dp",
+			"<leader>dd",
 			":DapToggleBreakpoint<CR>",
 			{ desc = "DAP Toggle Breakpoint", noremap = true, silent = true }
 		)
+		vim.keymap.set(
+			"n",
+			"<leader>dl",
+			":require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))",
+			{ desc = "DAP Toggle Logpoint", noremap = true, silent = true }
+		)
+		vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
+			require("dap.ui.widgets").hover()
+		end, { desc = "DAP Hover", noremap = true, silent = true })
+		vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
+			require("dap.ui.widgets").preview()
+		end, { desc = "DAP Preview", noremap = true, silent = true })
+		vim.keymap.set("n", "<Leader>df", function()
+			local widgets = require("dap.ui.widgets")
+			widgets.centered_float(widgets.frames)
+		end, { desc = "DAP Frames", noremap = true, silent = true })
+		vim.keymap.set("n", "<Leader>ds", function()
+			local widgets = require("dap.ui.widgets")
+			widgets.centered_float(widgets.scopes)
+		end, { desc = "DAP Scopes", noremap = true, silent = true })
 		vim.keymap.set("n", "<F5>", ":DapStepOver<CR>", { desc = "DAP Step Over", noremap = true, silent = true })
 		vim.keymap.set("n", "<F6>", ":DapStepInto<CR>", { desc = "DAP Step Into", noremap = true, silent = true })
 		vim.keymap.set("n", "<F7>", ":DapStepOut<CR>", { desc = "DAP Step Out", noremap = true, silent = true })
