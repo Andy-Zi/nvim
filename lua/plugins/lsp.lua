@@ -10,14 +10,22 @@ return {
      {
           "williamboman/mason-lspconfig.nvim",
           config = function()
-               require("mason-lspconfig").setup({
-                    ensure_installed = {
-                         "lua_ls",
-                         "tsserver",
-                         "pyright",
-                         --"rust_analyzer"
-                    },
-               })
+            require("mason").setup()
+            require("mason-lspconfig").setup()
+
+            require("mason-lspconfig").setup_handlers {
+                -- The first entry (without a key) will be the default handler
+                -- and will be called for each installed server that doesn't have
+                -- a dedicated handler.
+                function (server_name) -- default handler (optional)
+                    require("lspconfig")[server_name].setup {}
+                end,
+                -- Next, you can provide a dedicated handler for specific servers.
+                -- For example, a handler override for the `rust_analyzer`:
+                -- ["rust_analyzer"] = function ()
+                --     require("rust-tools").setup {}
+                -- end
+            }
           end,
      },
      -- setup LSP's for use in nvim
@@ -26,17 +34,17 @@ return {
           config = function()
                local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-               local lspconfig = require("lspconfig")
-               lspconfig.pyright.setup({
-                    capabilities = capabilities,
-               })
-               lspconfig.tsserver.setup({
-                    capabilities = capabilities,
-               })
-               --lspconfig.rust_analyzer.setup({})
-               lspconfig.lua_ls.setup({
-                    capabilities = capabilities,
-               })
+               -- local lspconfig = require("lspconfig")
+               -- lspconfig.pyright.setup({
+               --      capabilities = capabilities,
+               -- })
+               -- lspconfig.tsserver.setup({
+               --      capabilities = capabilities,
+               -- })
+               -- --lspconfig.rust_analyzer.setup({})
+               -- lspconfig.lua_ls.setup({
+               --      capabilities = capabilities,
+               -- })
                --
                -- Global mappings.
                -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -57,7 +65,7 @@ return {
                          vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, silent = true, noremap = true, desc="LSP definition"})
                          vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, silent = true, noremap = true, desc="LSP hover"})
                          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, silent = true, noremap = true, desc="LSP implementation"})
-                         vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, silent = true, noremap = true, desc="LSP signature help"})
+                         vim.keymap.set("n", "gk", vim.lsp.buf.signature_help, { buffer = ev.buf, silent = true, noremap = true, desc="LSP signature help"})
                          vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, silent = true, noremap = true, desc="LSP add workspace folder"})
                          vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { buffer = ev.buf, silent = true, noremap = true, desc="LSP remove workspace folder"})
                          vim.keymap.set("n", "<leader>wl", function()

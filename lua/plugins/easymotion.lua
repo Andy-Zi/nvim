@@ -8,13 +8,13 @@ return {
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>s",
-			"<Plug>(easymotion-overwin-f2)",
+			"<Plug>(easymotion-bd-f2)",
 			{ desc = "Find 2 characters", noremap = false, silent = true }
 		)
 		vim.api.nvim_set_keymap(
 			"n",
 			"s",
-			"<Plug>(easymotion-overwin-f)",
+			"<Plug>(easymotion-bd-f)",
 			{ desc = "Find 1 character", noremap = false, silent = true }
 		)
 
