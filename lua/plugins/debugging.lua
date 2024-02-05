@@ -5,8 +5,8 @@ return {
 		"tpope/vim-fugitive",
 		"folke/neodev.nvim",
 		"theHamsta/nvim-dap-virtual-text",
-		-- Python
-		"mfussenegger/nvim-dap-python",
+		"mfussenegger/nvim-dap",
+		"jay-babu/mason-nvim-dap.nvim",
 	},
 	config = function()
 		require("nvim-dap-virtual-text").setup()
@@ -14,6 +14,8 @@ return {
 		require("neodev").setup({
 			library = { plugins = { "nvim-dap-ui" }, types = true },
 		})
+        require("mason").setup()
+        require("mason-nvim-dap").setup()
 		local dap, dapui = require("dap"), require("dapui")
 
 		dap.listeners.before.attach.dapui_config = function()
@@ -29,15 +31,40 @@ return {
 			dapui.close()
 		end
 
-		vim.keymap.set("n", "<Leader>dt", ":lua require('dapui').toggle()<CR>", {desc = "Toggle DAP UI", noremap = true, silent = true})
-		vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {desc = "Reset DAP UI", noremap = true, silent = true})
-		vim.keymap.set("n", "<leader>ds", ":DapContinue<CR>", {desc = "DAP Continue", noremap = true, silent = true})
-		vim.keymap.set("n", "<leader>dx", ":DapTerminate<CR>", {desc = "DAP Terminate", noremap = true, silent = true})
-		vim.keymap.set("n", "<leader>dp", ":DapToggleBreakpoint<CR>", {desc = "DAP Toggle Breakpoint", noremap = true, silent = true})
-		vim.keymap.set("n", "<F5>", ":DapStepOver<CR>", {desc = "DAP Step Over", noremap = true, silent = true})
-		vim.keymap.set("n", "<F6>", ":DapStepInto<CR>", {desc = "DAP Step Into", noremap = true, silent = true})
-		vim.keymap.set("n", "<F7>", ":DapStepOut<CR>", {desc = "DAP Step Out", noremap = true, silent = true})
-		vim.keymap.set("n", "<Leader>dl", ":lua require('dap.ext.vscode').load_launchjs()<CR>", {desc = "DAP Load Launch", noremap = true, silent = true})
+		vim.keymap.set(
+			"n",
+			"<Leader>dt",
+			":lua require('dapui').toggle()<CR>",
+			{ desc = "Toggle DAP UI", noremap = true, silent = true }
+		)
+		vim.keymap.set(
+			"n",
+			"<Leader>dr",
+			":lua require('dapui').open({reset = true})<CR>",
+			{ desc = "Reset DAP UI", noremap = true, silent = true }
+		)
+		vim.keymap.set("n", "<leader>ds", ":DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
+		vim.keymap.set(
+			"n",
+			"<leader>dx",
+			":DapTerminate<CR>",
+			{ desc = "DAP Terminate", noremap = true, silent = true }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>dp",
+			":DapToggleBreakpoint<CR>",
+			{ desc = "DAP Toggle Breakpoint", noremap = true, silent = true }
+		)
+		vim.keymap.set("n", "<F5>", ":DapStepOver<CR>", { desc = "DAP Step Over", noremap = true, silent = true })
+		vim.keymap.set("n", "<F6>", ":DapStepInto<CR>", { desc = "DAP Step Into", noremap = true, silent = true })
+		vim.keymap.set("n", "<F7>", ":DapStepOut<CR>", { desc = "DAP Step Out", noremap = true, silent = true })
+		vim.keymap.set(
+			"n",
+			"<Leader>dl",
+			":lua require('dap.ext.vscode').load_launchjs()<CR>",
+			{ desc = "DAP Load Launch", noremap = true, silent = true }
+		)
 
 		vim.fn.sign_define(
 			"DapBreakpoint",
@@ -51,29 +78,21 @@ return {
 			"DapLogPoint",
 			{ text = "📝", texthl = "DapLogPoint", linehl = "DapLogPoint", numhl = "DapLogPoint" }
 		)
-		vim.fn.sign_define(
-			"DapBreakpointRejected",
-			{
-				text = "🚫",
-				texthl = "DapBreakpointRejected",
-				linehl = "DapBreakpointRejected",
-				numhl = "DapBreakpointRejected",
-			}
-		)
-		vim.fn.sign_define(
-			"DapBreakpointCondition",
-			{
-				text = "🔍",
-				texthl = "DapBreakpointCondition",
-				linehl = "DapBreakpointCondition",
-				numhl = "DapBreakpointCondition",
-			}
-		)
+		vim.fn.sign_define("DapBreakpointRejected", {
+			text = "🚫",
+			texthl = "DapBreakpointRejected",
+			linehl = "DapBreakpointRejected",
+			numhl = "DapBreakpointRejected",
+		})
+		vim.fn.sign_define("DapBreakpointCondition", {
+			text = "🔍",
+			texthl = "DapBreakpointCondition",
+			linehl = "DapBreakpointCondition",
+			numhl = "DapBreakpointCondition",
+		})
 		vim.fn.sign_define(
 			"DapBreakpointHit",
 			{ text = "🎯", texthl = "DapBreakpointHit", linehl = "DapBreakpointHit", numhl = "DapBreakpointHit" }
 		)
-
-		require("dap-python").setup("~/.virtualenvs/debugpy3.11/bin/python")
 	end,
 }

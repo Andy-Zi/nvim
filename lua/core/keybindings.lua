@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader><leader>Y", [["+Y]], { noremap = true, silent = tru
 vim.keymap.set({ "n", "v" }, "<leader><leader>p", [["+p]], { noremap = true, silent = true })
 vim.keymap.set("n", "<leader><leader>P", [["+P]], { noremap = true, silent = true })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader><leader>d", [["_d]], { noremap = true, silent = true })
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true })
@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader><leader>s", ":nohlsearch<CR>", { noremap = true, si
 
 vim.keymap.set("n", "H", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "L", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>b", ":enew<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":bn<CR>:bd #<CR>", {desc="Delete buffer", noremap = true, silent = true })
 
 vim.keymap.set("n", "<c-up>", ":resize +2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<c-down>", ":resize -2<CR>", { noremap = true, silent = true })

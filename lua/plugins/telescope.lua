@@ -19,7 +19,7 @@ return {
                 })
             end, {desc="Buffers", noremap=false, silent=true})
             vim.keymap.set("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {desc="commands", noremap=false, silent=true})
-            vim.keymap.set("n", "<leader>pt", "<Cmd>lua Treesitter<CR>", {desc="Telescope", noremap=false, silent=true})
+            vim.keymap.set("n", "<leader>pt", "<Cmd>Telescope<CR>", {desc="Telescope", noremap=false, silent=true})
         end,
     },
     {
