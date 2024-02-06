@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader><leader>s", ":nohlsearch<CR>", { noremap = true, si
 
 vim.keymap.set("n", "H", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "L", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>bd", ":bn<CR>:bd #<CR>", {desc="Delete buffer", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":bp<CR>:bd #<CR>", {desc="Delete buffer", noremap = true, silent = true })
 
 vim.keymap.set("n", "<c-up>", ":resize +2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<c-down>", ":resize -2<CR>", { noremap = true, silent = true })
@@ -61,3 +61,6 @@ vim.keymap.set("n", "<C-M-h>", ":tabprev<CR>", { noremap = true, silent = true }
 vim.keymap.set("n", "<C-M-l>", ":tabnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-M-c>", ":tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-M-x>", ":tabclose<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>w", ":set wrap linebreak<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader><leader>w", ":set nowrap nolinebreak<CR>", { noremap = true, silent = true })
