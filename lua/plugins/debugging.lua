@@ -43,7 +43,7 @@ return {
 			":lua require('dapui').open({reset = true})<CR>",
 			{ desc = "Reset DAP UI", noremap = true, silent = true }
 		)
-		vim.keymap.set("n", "<leader>du", ":DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>du", ":lua require('dap.ext.vscode').load_launchjs()<CR>:DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
 		vim.keymap.set(
 			"n",
 			"<leader>dx",
@@ -58,7 +58,7 @@ return {
 		)
 		vim.keymap.set(
 			"n",
-			"<leader>dl",
+			"<leader>do",
 			":require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))",
 			{ desc = "DAP Toggle Logpoint", noremap = true, silent = true }
 		)
@@ -79,12 +79,12 @@ return {
 		vim.keymap.set("n", "<F5>", ":DapStepOver<CR>", { desc = "DAP Step Over", noremap = true, silent = true })
 		vim.keymap.set("n", "<F6>", ":DapStepInto<CR>", { desc = "DAP Step Into", noremap = true, silent = true })
 		vim.keymap.set("n", "<F7>", ":DapStepOut<CR>", { desc = "DAP Step Out", noremap = true, silent = true })
-		vim.keymap.set(
-			"n",
-			"<Leader>dl",
-			":lua require('dap.ext.vscode').load_launchjs()<CR>",
-			{ desc = "DAP Load Launch", noremap = true, silent = true }
-		)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<Leader>dl",
+		-- 	":lua require('dap.ext.vscode').load_launchjs()<CR>",
+		-- 	{ desc = "DAP Load Launch", noremap = true, silent = true }
+		-- )
 
 		vim.fn.sign_define(
 			"DapBreakpoint",
