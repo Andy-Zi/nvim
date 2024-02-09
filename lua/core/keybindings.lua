@@ -36,7 +36,7 @@ vim.keymap.set(
 	"n",
 	"<leader>r",
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ noremap = true, silent = true }
+	{desc="change all", noremap = true, silent = true }
 )
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { noremap = true, silent = true})
 
