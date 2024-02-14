@@ -1,10 +1,9 @@
 return {
 	"akinsho/toggleterm.nvim",
 	config = function()
-        vim.api.nvim_set_keymap('n', '<c-\\>', '', {})
 		require("toggleterm").setup({
 			size = 20,
-			open_mapping = [[<c-\>]],
+			open_mapping = [[<c-a-\>]],
 			shade_filetypes = {},
 			shade_terminals = true,
 			shading_factor = 1,
