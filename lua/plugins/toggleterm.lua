@@ -48,13 +48,13 @@ return {
 			"n",
 			"<leader>gl",
 			"<cmd>lua _lazygit_toggle()<CR>",
-			{ desc = "LazyGit", noremap = true, silent = true }
+			{ desc = "[L]azy[G]it", noremap = true, silent = true }
 		)
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>dl",
 			"<cmd>lua _lazydocker_toggle()<CR>",
-			{ desc = "LazyDocker", noremap = true, silent = true }
+			{ desc = "[L]azy[D]ocker", noremap = true, silent = true }
 		)
 	end,
 }

@@ -94,4 +94,4 @@ vim.keymap.set("n", "<leader><leader>w", function()
 end, { noremap = true, silent = true, desc = "Toggle line wrapping" })
 
 -- Easier exit from terminal mode using <Esc><Esc> instead of the default <C-\><C-n>.
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode', noremap = true, silent = true })
+vim.keymap.set('t', '<C-n>', '<C-\\><C-n>', { desc = 'Exit terminal mode', noremap = true, silent = true })

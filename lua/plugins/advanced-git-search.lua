@@ -34,6 +34,8 @@ return {
         }
 
         require("telescope").load_extension("advanced_git_search")
+        vim.keymap.set('n', '<leader>sG', '<cmd>AdvancedGitSearch<cr>',
+            { noremap = true, silent = true, desc = "[S]earch [G]it" })
     end,
     dependencies = {
         "nvim-telescope/telescope.nvim",
