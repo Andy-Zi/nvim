@@ -21,10 +21,10 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Set the update time to 250ms, affecting how often Neovim refreshes and triggers certain events like the CursorHold event
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Set the timeout length to 300ms, affecting how long Neovim waits for a mapped sequence to complete
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 100
 
 -- Open new splits to the right and below the current window, respectively
 vim.opt.splitright = true
