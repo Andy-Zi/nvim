@@ -53,7 +53,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Replace word under cursor across the whole file with <leader>r
 vim.keymap.set(
     "n",
-    "<leader>r",
+    "<leader>rw",
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     {desc="Replace word under cursor across file", noremap = true, silent = true }
 )
