@@ -9,7 +9,7 @@ return {
             { noremap = true, silent = true, desc = '[G]it [N]ext DiffView' })
         vim.keymap.set('n', '<leader>gp', '<cmd>DiffviewPrev<CR>',
             { noremap = true, silent = true, desc = '[G]it [P]revious DiffView' })
-        vim.keymap.set('n', '<leader>gh', '<cmd>DiffviewFileHistory<CR>',
+        vim.keymap.set('n', '<leader>gh', '<cmd>DiffviewFileHistory %<CR>',
             { noremap = true, silent = true, desc = '[G]it File [H]istory' })
     end,
 }
