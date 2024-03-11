@@ -24,12 +24,6 @@ return {
 		dap.listeners.before.launch.dapui_config = function()
 			dapui.open()
 		end
-		dap.listeners.before.event_terminated.dapui_config = function()
-			dapui.close()
-		end
-		dap.listeners.before.event_exited.dapui_config = function()
-			dapui.close()
-		end
 
 		vim.keymap.set(
 			"n",
@@ -79,12 +73,7 @@ return {
 		vim.keymap.set("n", "<F5>", ":DapStepOver<CR>", { desc = "DAP Step Over", noremap = true, silent = true })
 		vim.keymap.set("n", "<F6>", ":DapStepInto<CR>", { desc = "DAP Step Into", noremap = true, silent = true })
 		vim.keymap.set("n", "<F7>", ":DapStepOut<CR>", { desc = "DAP Step Out", noremap = true, silent = true })
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<Leader>dl",
-		-- 	":lua require('dap.ext.vscode').load_launchjs()<CR>",
-		-- 	{ desc = "DAP Load Launch", noremap = true, silent = true }
-		-- )
+		vim.keymap.set({ "n", "v" }, "<leader>de" ,"<Cmd>lua require('dapui').eval()<CR>", { desc = "DAP Eval", noremap = true, silent = true })
 
 		vim.fn.sign_define(
 			"DapBreakpoint",
