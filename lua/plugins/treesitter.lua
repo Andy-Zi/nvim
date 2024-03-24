@@ -80,10 +80,10 @@ return {
             indent = { enable = true },
         })
         -- local vim = vim
-        local opt = vim.opt
+        -- local opt = vim.opt
 
-        opt.foldmethod = "expr"
-        opt.foldexpr = "nvim_treesitter#foldexpr()"
+        -- opt.foldmethod = "expr"
+        -- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
     end,
 }
