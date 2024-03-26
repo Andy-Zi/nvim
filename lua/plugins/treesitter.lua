@@ -76,7 +76,9 @@ return {
         configs.setup({
             auto_install = true,
             sync_install = false,
-            highlight = { enable = true },
+            highlight = { enable = true,
+                disable = { "csv" },
+            },
             indent = { enable = true },
         })
         -- local vim = vim
