@@ -5,7 +5,15 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-
+		{
+			'MeanderingProgrammer/py-requirements.nvim',
+			dependencies = { 'nvim-treesitter/nvim-treesitter' },
+			config = function()
+				require('py-requirements').setup({
+					file_patterns = { '^requirements.*\\.txt$' }
+				})
+			end,
+		},
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
 	},
