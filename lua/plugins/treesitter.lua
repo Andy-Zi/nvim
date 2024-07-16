@@ -24,6 +24,9 @@ return {
             "nvim-treesitter/nvim-treesitter-textobjects",
             config = function()
                 require("nvim-treesitter.configs").setup({
+					ensure_installed = {
+						'requirements',
+					},
                     textobjects = {
                         select = {
                             enable = true,
