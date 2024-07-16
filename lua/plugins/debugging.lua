@@ -43,7 +43,7 @@ return {
 			":lua require('dapui').open({reset = true})<CR>",
 			{ desc = "Reset DAP UI", noremap = true, silent = true }
 		)
-		vim.keymap.set("n", "<leader>du", ":lua require('dap.ext.vscode').load_launchjs()<CR>:DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>du", ":DapContinue<CR>", { desc = "DAP Continue", noremap = true, silent = true })
 		vim.keymap.set(
 			"n",
 			"<leader>dx",
