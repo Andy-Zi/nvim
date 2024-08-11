@@ -216,6 +216,8 @@ return { -- LSP Configuration & Plugins
 			"stylua", -- Used to format lua code
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+		
+		require'lspconfig'.nixd.setup{}
 
 		require("mason-lspconfig").setup({
 			handlers = {
