@@ -12,6 +12,8 @@ return {
 			auto_save_enable = true,
 			auto_restore_enabled = true,
 			auto_session_use_git_branch = true,
+			close_unsupported_windows = true,
+			bypass_save_filetypes = {"dap_ui_scopes", "dap_repl", "dapui_watches", "dapui_breakpoints", "dapui_stacks", "dapui_console"},
 		})
 		vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 		vim.keymap.set(
