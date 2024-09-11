@@ -59,6 +59,7 @@ return {
 
 		-- Specify the location where database connections configured through vim-dadbod-ui are saved.
 		-- Uses the standard configuration path for Neovim and appends ".db_ui" for storing connections.
+		-- This is cuurently stored in the nvim config directory.
 		vim.g.db_ui_save_location = vim.fn.stdpath "config" .. require("plenary.path").path.sep .. ".db_ui"
 	end,
 }
