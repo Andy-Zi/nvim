@@ -2,6 +2,14 @@ return   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
+      {
+        "MattiasMTS/cmp-dbee",
+        dependencies = {
+          {"kndndrj/nvim-dbee"}
+        },
+        ft = "sql", -- optional but good to have
+        opts = {}, -- needed
+      },
       -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
@@ -84,6 +92,7 @@ return   { -- Autocompletion
           end, { 'i', 's' }),
         },
         sources = {
+          -- { "cmp-dbee" },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },

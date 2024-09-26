@@ -63,3 +63,34 @@ return {
 		vim.g.db_ui_save_location = vim.fn.stdpath "config" .. require("plenary.path").path.sep .. ".db_ui"
 	end,
 }
+
+-- return {
+-- 	"kndndrj/nvim-dbee",
+-- 	dependencies = {
+-- 		"MunifTanjim/nui.nvim",
+-- 	},
+-- 	build = function()
+-- 		-- Install tries to automatically detect the install method.
+-- 		-- if it fails, try calling it with one of these parameters:
+-- 		--    "curl", "wget", "bitsadmin", "go"
+-- 		require("dbee").install()
+-- 	end,
+-- 	config = function()
+-- 		require("dbee").setup({
+-- 			sources = {
+-- 				require("dbee.sources").FileSource:new(
+-- 					vim.fn.stdpath("config") .. require("plenary.path").path.sep .. ".db_ui" .. require("plenary.path").path.sep .."persistence.json"
+-- 				),
+-- 			},
+-- 			editor = {
+-- 				directory = vim.fn.stdpath("config") .. require("plenary.path").path.sep .. ".db_ui"
+-- 			},
+-- 		})
+-- 		vim.keymap.set(
+-- 			"n",
+-- 			"<leader>db",
+-- 			':lua require("dbee").toggle() <CR>',
+-- 			{ desc = "Toggle DBUI", noremap = true, silent = true }
+-- 		)
+-- 	end,
+-- }
