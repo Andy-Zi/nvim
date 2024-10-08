@@ -5,40 +5,40 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		{
-			"MeanderingProgrammer/py-requirements.nvim",
-			dependencies = { "nvim-treesitter/nvim-treesitter" },
-			config = function()
-				local requirements = require("py-requirements")
-				vim.keymap.set(
-					"n",
-					"<leader>ru",
-					requirements.upgrade,
-					{ silent = true, desc = "Requirements: Upgrade" }
-				)
-				vim.keymap.set(
-					"n",
-					"<leader>rU",
-					requirements.upgrade_all,
-					{ silent = true, desc = "Requirements: Upgrade All" }
-				)
-				vim.keymap.set(
-					"n",
-					"<leader>rK",
-					requirements.show_description,
-					{ silent = true, desc = "Requirements: Show package description" }
-				)
-				requirements.setup({
-					file_patterns = { "^requirements.*\\.txt$" },
-				})
-				local cmp = require("cmp")
-				cmp.setup({
-					sources = cmp.config.sources({
-						{ name = "py-requirements" },
-					}),
-				})
-			end,
-		},
+		-- {
+		-- 	"MeanderingProgrammer/py-requirements.nvim",
+		-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
+		-- 	config = function()
+		-- 		local requirements = require("py-requirements")
+		-- 		vim.keymap.set(
+		-- 			"n",
+		-- 			"<leader>ru",
+		-- 			requirements.upgrade,
+		-- 			{ silent = true, desc = "Requirements: Upgrade" }
+		-- 		)
+		-- 		vim.keymap.set(
+		-- 			"n",
+		-- 			"<leader>rU",
+		-- 			requirements.upgrade_all,
+		-- 			{ silent = true, desc = "Requirements: Upgrade All" }
+		-- 		)
+		-- 		vim.keymap.set(
+		-- 			"n",
+		-- 			"<leader>rK",
+		-- 			requirements.show_description,
+		-- 			{ silent = true, desc = "Requirements: Show package description" }
+		-- 		)
+		-- 		requirements.setup({
+		-- 			file_patterns = { "^requirements.*\\.txt$" },
+		-- 		})
+		-- 		local cmp = require("cmp")
+		-- 		cmp.setup({
+		-- 			sources = cmp.config.sources({
+		-- 				{ name = "py-requirements" },
+		-- 			}),
+		-- 		})
+		-- 	end,
+		-- },
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
 	},

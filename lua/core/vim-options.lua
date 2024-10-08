@@ -75,3 +75,7 @@ vim.opt.termguicolors = true
 vim.opt.conceallevel = 1
 
 vim.opt.isfname:append("@-@")
+
+
+vim.opt.foldlevelstart = 99;
+

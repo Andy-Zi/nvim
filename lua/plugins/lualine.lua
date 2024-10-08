@@ -1,14 +1,14 @@
 function env_context()
-  local env_file_path = vim.fn.getcwd() .. "/.envrc.context"
-  local env_file = io.open(env_file_path, "r")
-  if env_file then
-    local content = env_file:read("*all")
-    env_file:close()
-    content = content:gsub("%z", "")  -- Clean up null characters if present
-    return "env: " .. content  -- Formatting the output as "env: content"
-  else
-    return "env: No env"  -- Formatting when no environment file is found
-  end
+    local env_file_path = vim.fn.getcwd() .. "/.envrc.context"
+    local env_file = io.open(env_file_path, "r")
+    if env_file then
+        local content = env_file:read("*all")
+        env_file:close()
+        content = content:gsub("%z", "") -- Clean up null characters if present
+        return "env: " .. content  -- Formatting the output as "env: content"
+    else
+        return "env: No env"       -- Formatting when no environment file is found
+    end
 end
 
 return {

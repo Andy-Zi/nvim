@@ -15,25 +15,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
--- Create an autocommand that triggers on the BufWinEnter event.
--- This event occurs after entering a buffer window, making it suitable for
--- operations that should apply as soon as a file is displayed in a window.
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  -- Provide a description for this autocommand for clarity and maintainability.
-  desc = 'Automatically open all folds when opening a file',
-
-  -- Assign the autocommand to a specific group named 'AutoOpenFolds'.
-  -- The 'clear = true' option ensures that any previous commands in this group
-  -- are cleared out, preventing duplication of the autocommand in the same group.
-  group = vim.api.nvim_create_augroup('AutoOpenFolds', { clear = true }),
-
-  -- The callback function contains the actual command to be executed when
-  -- the autocommand is triggered. In this case, it opens all folds in the file.
-  callback = function()
-    -- Execute 'zR' in normal mode to open all folds.
-    -- The 'normal!' command ensures that 'zR' is executed in normal mode,
-    -- and 'zR' is the Vim command to open all folds.
-    vim.cmd('normal! zR')
-  end,
-})
-
+-- -- Create an autocommand that triggers on the BufWinEnter event.
+-- -- This event occurs after entering a buffer window, making it suitable for
+-- -- operations that should apply as soon as a file is displayed in a window.
+-- vim.api.nvim_create_autocmd('BufWinEnter', {
+--   -- Provide a description for this autocommand for clarity and maintainability.
+--   desc = 'Automatically open all folds when opening a file',
+--
+--   -- Assign the autocommand to a specific group named 'AutoOpenFolds'.
+--   -- The 'clear = true' option ensures that any previous commands in this group
+--   -- are cleared out, preventing duplication of the autocommand in the same group.
+--   group = vim.api.nvim_create_augroup('AutoOpenFolds', { clear = true }),
+--
+--   -- The callback function contains the actual command to be executed when
+--   -- the autocommand is triggered. In this case, it opens all folds in the file.
+--   callback = function()
+--     -- Execute 'zR' in normal mode to open all folds.
+--     -- The 'normal!' command ensures that 'zR' is executed in normal mode,
+--     -- and 'zR' is the Vim command to open all folds.
+--     vim.cmd('normal! zR')
+--   end,
+-- })
+--
