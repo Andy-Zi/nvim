@@ -216,8 +216,28 @@ return { -- LSP Configuration & Plugins
 			"stylua", -- Used to format lua code
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-		
-		require'lspconfig'.nixd.setup{}
+
+		require("lspconfig").nixd.setup({
+			cmd = { "nixd" },
+			settings = {
+				nixd = {
+					nixpkgs = {
+						expr = "import <nixpkgs> { }",
+					},
+					formatting = {
+						command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
+					},
+					options = {
+					  nixos = {
+					      expr = '(builtins.getFlake "~/nixos/").nixosConfigurations.gough.options',
+					  },
+					  -- home_manager = {
+					  --     expr = '(builtins.getFlake "~/nixos/").homeConfigurations.gough.options',
+					  -- },
+					},
+				},
+			},
+		})
 
 		require("mason-lspconfig").setup({
 			handlers = {
