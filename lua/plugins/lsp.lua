@@ -123,7 +123,6 @@ return { -- LSP Configuration & Plugins
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
-
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 		--
@@ -133,12 +132,12 @@ return { -- LSP Configuration & Plugins
 		--  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
 		--  - settings (table): Override the default settings passed when initializing the server.
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-		local on_attach_ruff = function(client, bufnr)
-			if client.name == "ruff_lsp" then
-				-- Disable hover in favor of Pyright
-				client.server_capabilities.hoverProvider = false
-			end
-		end
+		-- local on_attach_ruff = function(client, bufnr)
+		-- 	if client.name == "ruff_lsp" then
+		-- 		-- Disable hover in favor of Pyright
+		-- 		client.server_capabilities.hoverProvider = false
+		-- 	end
+		-- end
 
 		local servers = {
 			-- clangd = {},
@@ -159,9 +158,9 @@ return { -- LSP Configuration & Plugins
 					},
 				},
 			},
-			ruff_lsp = {
-				on_attach = on_attach_ruff,
-			},
+			-- ruff_lsp = {
+			-- 	on_attach = on_attach_ruff,
+			-- },
 
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -217,23 +216,65 @@ return { -- LSP Configuration & Plugins
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
+		-- require("lspconfig").nixd.setup({
+		-- 	cmd = { "nixd" },
+		-- 	settings = {
+		-- 		nixd = {
+		-- 			nixpkgs = {
+		-- 				expr = "import <nixpkgs> { }",
+		-- 			},
+		-- 			formatting = {
+		-- 				command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
+		-- 			},
+		-- 			options = {
+		-- 				nixos = {
+		-- 					expr = '(builtins.getFlake "~/nixos/").nixosConfigurations.work.options',
+		-- 				},
+		-- 				-- home_manager = {
+		-- 				--     expr = '(builtins.getFlake "~/nixos/").homeConfigurations.gough.options',
+		-- 				-- },
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		local on_attach = function(bufnr)
+			vim.api.nvim_create_autocmd("CursorHold", {
+				buffer = bufnr,
+				callback = function()
+					local opts = {
+						focusable = false,
+						close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+						border = "rounded",
+						source = "always",
+						prefix = " ",
+						scope = "line",
+					}
+					vim.diagnostic.open_float(nil, opts)
+				end,
+			})
+		end
 		require("lspconfig").nixd.setup({
-			cmd = { "nixd" },
+			on_attach = on_attach(),
+			capabilities = capabilities,
 			settings = {
 				nixd = {
 					nixpkgs = {
 						expr = "import <nixpkgs> { }",
 					},
 					formatting = {
-						command = { "nixfmt" }, -- or nixfmt or nixpkgs-fmt
+						command = { "nixfmt" },
 					},
 					options = {
-					  nixos = {
-					      expr = '(builtins.getFlake "~/nixos/").nixosConfigurations.gough.options',
-					  },
-					  -- home_manager = {
-					  --     expr = '(builtins.getFlake "~/nixos/").homeConfigurations.gough.options',
-					  -- },
+						nixos = {
+							expr = '(builtins.getFlake "~/nixos/").nixosConfigurations.gough.options',
+						},
+						home_manager = {
+							expr = '(builtins.getFlake "~/nixos/").homeConfigurations."az@gough".options',
+						},
+						flake_parts = {
+							expr =
+							'let flake = builtins.getFlake ("~/nixos/"); in flake.debug.options // flake.currentSystem.options',
+						},
 					},
 				},
 			},
