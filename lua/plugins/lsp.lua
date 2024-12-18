@@ -237,24 +237,24 @@ return { -- LSP Configuration & Plugins
 		-- 		},
 		-- 	},
 		-- })
-		local on_attach = function(bufnr)
-			vim.api.nvim_create_autocmd("CursorHold", {
-				buffer = bufnr,
-				callback = function()
-					local opts = {
-						focusable = false,
-						close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-						border = "rounded",
-						source = "always",
-						prefix = " ",
-						scope = "line",
-					}
-					vim.diagnostic.open_float(nil, opts)
-				end,
-			})
-		end
+		-- local on_attach = function(bufnr)
+		-- 	vim.api.nvim_create_autocmd("CursorHold", {
+		-- 		buffer = bufnr,
+		-- 		callback = function()
+		-- 			local opts = {
+		-- 				focusable = true,
+		-- 				close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+		-- 				border = "rounded",
+		-- 				source = "always",
+		-- 				prefix = " ",
+		-- 				scope = "line",
+		-- 			}
+		-- 			vim.diagnostic.open_float(nil, opts)
+		-- 		end,
+		-- 	})
+		-- end
 		require("lspconfig").nixd.setup({
-			on_attach = on_attach(),
+			-- on_attach = on_attach(),
 			capabilities = capabilities,
 			settings = {
 				nixd = {
@@ -266,10 +266,10 @@ return { -- LSP Configuration & Plugins
 					},
 					options = {
 						nixos = {
-							expr = '(builtins.getFlake "~/nixos/").nixosConfigurations.gough.options',
+							expr = '(builtins.getFlake "~/nixos/").nixosConfigurations.work.options',
 						},
 						home_manager = {
-							expr = '(builtins.getFlake "~/nixos/").homeConfigurations."az@gough".options',
+							expr = '(builtins.getFlake "~/nixos/").homeConfigurations."az@work".options',
 						},
 						flake_parts = {
 							expr =

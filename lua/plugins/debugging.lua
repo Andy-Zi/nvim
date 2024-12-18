@@ -9,6 +9,12 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		--python
 		"mfussenegger/nvim-dap-python",
+		{
+			{
+				"stevearc/overseer.nvim",
+				opts = {},
+			},
+		},
 	},
 	config = function()
 		require("nvim-dap-virtual-text").setup()
@@ -79,7 +85,12 @@ return {
 		vim.keymap.set("n", "<F5>", ":DapStepOver<CR>", { desc = "DAP Step Over", noremap = true, silent = true })
 		vim.keymap.set("n", "<F6>", ":DapStepInto<CR>", { desc = "DAP Step Into", noremap = true, silent = true })
 		vim.keymap.set("n", "<F7>", ":DapStepOut<CR>", { desc = "DAP Step Out", noremap = true, silent = true })
-		vim.keymap.set({ "n", "v" }, "<leader>de" ,"<Cmd>lua require('dapui').eval()<CR>", { desc = "DAP Eval", noremap = true, silent = true })
+		vim.keymap.set(
+			{ "n", "v" },
+			"<leader>de",
+			"<Cmd>lua require('dapui').eval()<CR>",
+			{ desc = "DAP Eval", noremap = true, silent = true }
+		)
 
 		vim.fn.sign_define(
 			"DapBreakpoint",
